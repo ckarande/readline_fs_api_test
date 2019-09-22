@@ -1,0 +1,32 @@
+{
+  "name": "async-coding-in-node-workshop",
+  "version": "1.0.0",
+  "author": {
+    "name": "Chetan Karande"
+  },
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "lint": "./node_modules/.bin/eslint .",
+    "autocannon": "autocannon -c 100 http://localhost:3600/",
+    "clinic": "clinic doctor --on-port 'autocannon -c 100 localhost:$PORT' -- node server.js",
+    "bubble": "clinic bubble --on-port 'autocannon -c 100 localhost:$PORT' -- node server.js",
+    "flame": "clinic flame --on-port 'autocannon -c 100 localhost:$PORT' -- node server.js"
+ 
+  },
+  "dependencies": {
+    "qs": "^6.5.2",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "autocannon": "^4.1.1",
+    "clinic": "^4.1.0",
+    "eslint": "^5.6.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-security": "^1.4.0",
+    "eslint-plugin-standard": "^4.0.0"
+  }
+}
