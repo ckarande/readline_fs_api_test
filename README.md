@@ -12,3 +12,10 @@
 5. Compare event loop block time in both cases in the browser.
 
 Note: No need to start server to run clinic command
+
+## Testing  overload protection:
+1. Start server `npm run start`
+2. The overlad protection features monitors event loop delay for 20 ms
+3. Access the endpoint from the browser `http://localhost:3600/`, it should receive respose with text normally.
+4. Start load testing using `npm run autocannon`
+5. While load test running, access the endpoint from the browser `http://localhost:3600/`. This should return [503 response] : ./503_response.png

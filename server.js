@@ -2,12 +2,18 @@
 const http = require('http');
 const url = require('url');
 const controller = require('./controller');
+const protectCfg = {
+    production: process.env.NODE_ENV === 'production', // if production is false, detailed error messages are exposed to the client
+    maxEventLoopDelay: 10 // maximum detected delay between event loop ticks [default 42]
+}
+
+const protect = require('overload-protection')('http', protectCfg)
 
 // Get port from env properties or set it a default port if not specified
 const port = process.env.PORT || 3600;
-
 // Create a http server, listening to requets on the port
 http.createServer(function (req, res) {
+    if (protect(req, res) === true) return
     // All requests come here first.
     router(req, res);
 }).listen(port);

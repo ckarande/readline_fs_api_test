@@ -4,7 +4,6 @@ const fs = require('fs');
 const readline = require('readline');
 const { once } = require('events');
 
-
 const filename = 'ufo_incidents_1000.txt'
 const fullPath = path.join(__dirname, 'reports', filename);
 

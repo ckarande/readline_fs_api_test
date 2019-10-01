@@ -12,9 +12,9 @@
     "clinic": "clinic doctor --on-port 'autocannon -c 100 localhost:$PORT' -- node server.js",
     "bubble": "clinic bubble --on-port 'autocannon -c 100 localhost:$PORT' -- node server.js",
     "flame": "clinic flame --on-port 'autocannon -c 100 localhost:$PORT' -- node server.js"
- 
   },
   "dependencies": {
+    "overload-protection": "^1.1.0",
     "qs": "^6.5.2",
     "request": "^2.88.0"
   },
