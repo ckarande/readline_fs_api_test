@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "overload-protection": "^1.1.0",
-    "qs": "^6.5.2",
+    "qs": "^6.7.3",
     "request": "^2.88.0"
   },
   "devDependencies": {
